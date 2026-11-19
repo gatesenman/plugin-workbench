@@ -4,19 +4,19 @@
 
 ## 界面截图
 
-![首页](src/plugin-ide/screenshots/v1.2/01-home-demo-banner.png)
+![首页](screenshots/v1.2/01-home-demo-banner.png)
 
 *首页 / Home*
 
-![意图卡片](src/plugin-ide/screenshots/v1.2/02-intent-cards.png)
+![意图卡片](screenshots/v1.2/02-intent-cards.png)
 
 *意图卡片 / Intent cards*
 
-![代码编辑](src/plugin-ide/screenshots/v1.2/06-code-tab-editor.png)
+![代码编辑](screenshots/v1.2/06-code-tab-editor.png)
 
 *代码编辑 / Code editor tab*
 
-![发布中心](src/plugin-ide/screenshots/biz-e2e/47-99-publish-center.png)
+![发布中心](screenshots/biz-e2e/47-99-publish-center.png)
 
 *发布中心 / Publish center*
 
@@ -28,21 +28,19 @@
 
 ## 技术栈
 
-- JavaScript / Electron（`src/plugin-ide`）
+- JavaScript / Electron（仓库根目录）
 
 ## 从源码运行
 
-源码在 `src/plugin-ide/`。本仓库不包含安装包。
+源码在仓库根目录。本仓库不包含安装包。
 
 ```bash
-cd src/plugin-ide
 npm install
 # 按该目录 README 启动开发或桌面端
 ```
-
 ## 文档
 
-- [源码 README](src/plugin-ide/README.md)
+- [源码 README](README.original.md)
 
 ---
 
@@ -54,19 +52,19 @@ npm install
 
 ## Screenshots
 
-![Home](src/plugin-ide/screenshots/v1.2/01-home-demo-banner.png)
+![Home](screenshots/v1.2/01-home-demo-banner.png)
 
 *首页 / Home*
 
-![Intent cards](src/plugin-ide/screenshots/v1.2/02-intent-cards.png)
+![Intent cards](screenshots/v1.2/02-intent-cards.png)
 
 *意图卡片 / Intent cards*
 
-![Code editor tab](src/plugin-ide/screenshots/v1.2/06-code-tab-editor.png)
+![Code editor tab](screenshots/v1.2/06-code-tab-editor.png)
 
 *代码编辑 / Code editor tab*
 
-![Publish center](src/plugin-ide/screenshots/biz-e2e/47-99-publish-center.png)
+![Publish center](screenshots/biz-e2e/47-99-publish-center.png)
 
 *发布中心 / Publish center*
 
@@ -78,19 +76,17 @@ npm install
 
 ## Tech stack
 
-- JavaScript / Electron（`src/plugin-ide`）
+- JavaScript / Electron（the repository root）
 
 ## Getting started
 
-Source is under `src/plugin-ide/`. This repository does not include installers.
+Source is at the repository root. This repository does not include installers.
 
 ```bash
-cd src/plugin-ide
 npm install
 # Start dev or desktop mode as that README describes
 ```
-
 ## Documentation
 
-- [源码 README](src/plugin-ide/README.md)
+- [源码 README](README.original.md)
 
