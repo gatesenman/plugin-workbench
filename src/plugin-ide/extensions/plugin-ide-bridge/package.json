@@ -1,0 +1,6 @@
+{ "name": "plugin-ide-bridge", "displayName": "Plugin IDE Lifecycle Bridge", "publisher": "plugin-ide", "version": "1.0.0", "engines": { "vscode": "^1.80.0" }, "main": "./extension.js", "activationEvents": ["onStartupFinished"],
+  "contributes": { "commands": [
+    { "command": "pluginIde.build", "title": "插件 IDE: 构建 Build", "category": "Plugin IDE" },
+    { "command": "pluginIde.validate", "title": "插件 IDE: AI 调试/校验 Validate", "category": "Plugin IDE" },
+    { "command": "pluginIde.package", "title": "插件 IDE: 打包 Package", "category": "Plugin IDE" },
+    { "command": "pluginIde.publish", "title": "插件 IDE: 发布 (dry-run) Publish", "category": "Plugin IDE" } ] } }

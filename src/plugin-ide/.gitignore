@@ -1,0 +1,5 @@
+node_modules/
+vendor/
+dist-app/
+test-results/
+test-report/

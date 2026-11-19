@@ -1,0 +1,246 @@
+{
+  "when": "2026-10-20T02:50:54.959Z",
+  "workspace": "/tmp/biz-ws-0is1ph",
+  "data": "/tmp/biz-data-L2P9u4",
+  "scenarios": [
+    {
+      "id": "chrome-translate",
+      "title": "Chrome 扩展 · 选中文字一键翻译",
+      "prompt": "做一个浏览器扩展，选中网页文字后一键翻译成中文",
+      "pass": true,
+      "steps": {
+        "intent": {
+          "selected": "ChromeGoogle · 浏览器宿主别名「浏览器扩展」",
+          "all": "ChromeGoogle · 浏览器宿主别名「浏览器扩展」都不是，手动指定"
+        },
+        "run": {
+          "status": "完成 · 通过",
+          "steps": " 准备宿主适配器Chrome（browser-ext） 创建项目脚手架biz-translate-zh · 5 个文件 AI 按方案生成代码✎ manifest.json\n✎ background.js\n✎ popup.html\n✎ popup.js\n✎ SPEC.md\n+ options.html\n+ options.js\n+ README.md 构建（第 1 次）  ✓ manifest.json\n  ✓ options.html\n  ✓ options.js\n  ✓ popup.html\n  ✓ popup.js\n  [toolchain] 调用 npx web-ext lint…\n  Validation Summary:\n\nerrors          2              \nnotices         0              \nwarnings        9              \n\nERRORS:\n\nCode                                  Message       Description              F\nBACKGROUND_SERVICE_WORKER_NOFALLBA…   Unsupported   The                      m\nCK                                    \"/backgrou…   \"/background/service_…   s\n                                      nd/service…   worker\" manifest          \n                                      _worker\"      prope"
+        },
+        "metaStages": {
+          "init": {
+            "ok": true,
+            "at": "2026-10-20T02:49:59.940Z"
+          },
+          "build": {
+            "ok": true,
+            "at": "2026-10-20T02:50:01.886Z"
+          },
+          "validate": {
+            "ok": true,
+            "at": "2026-10-20T02:50:03.578Z"
+          }
+        },
+        "iterate": "完成 · 通过"
+      },
+      "shots": [
+        "02-chrome-translate-01-prompt.png",
+        "03-chrome-translate-02-intent.png",
+        "04-chrome-translate-03-plan-before-edit.png",
+        "05-chrome-translate-04-plan-edited.png",
+        "06-chrome-translate-05-agent-running.png",
+        "07-chrome-translate-06-agent-done.png",
+        "08-chrome-translate-07-code-tab.png",
+        "09-chrome-translate-08-iterate.png",
+        "10-chrome-translate-09-ship.png"
+      ],
+      "artifact": "/tmp/biz-ws-0is1ph/biz-translate-zh/dist/biz-translate-zh-0.0.1.zip",
+      "artifactList": "Archive:  /tmp/biz-ws-0is1ph/biz-translate-zh/dist/biz-translate-zh-0.0.1.zip\n  Length      Date    Time    Name\n---------  ---------- -----   ----\n      412  2026-10-20 02:50   README.md\n      746  2026-10-20 02:50   background.js\n     1299  2026-10-20 02:50   SPEC.md\n      649  2026-10-20 02:50   manifest.json\n      552  2026-10-20 02:50   options.html\n      475  2026-10-20 02:50   options.js\n     1240  2026-10-20 02:50   popup.html\n     1919  2026-10-20 02:50   popup.js\n---------                     -------\n     7292                     8 files\n",
+      "projectDir": "/tmp/biz-ws-0is1ph/biz-translate-zh",
+      "mockQuality": "ok-demo",
+      "notes": []
+    },
+    {
+      "id": "vscode-dingtalk",
+      "title": "VS Code 扩展 · 选中代码发钉钉群",
+      "prompt": "做一个 VS Code 插件，右键把选中代码发给同事钉钉群",
+      "pass": true,
+      "steps": {
+        "intent": {
+          "selected": "Visual Studio CodeMicrosoft · IDE/代码编辑器宿主别名「vs code」",
+          "all": "Visual Studio CodeMicrosoft · IDE/代码编辑器宿主别名「vs code」钉钉阿里巴巴 · 通讯协作集成目标「钉钉」（非宿主）都不是，手动指定"
+        },
+        "run": {
+          "status": "完成 · 通过",
+          "steps": " 准备宿主适配器Visual Studio Code（vscode-ext） 创建项目脚手架biz-code-to-dingtalk · 5 个文件 AI 按方案生成代码✎ package.json\n✎ extension.js\n✎ README.md\n✎ CHANGELOG.md\n✎ SPEC.md\n+ test/extension.test.js 构建（第 1 次）  ✓ CHANGELOG.md\n  ✓ README.md\n  ✓ SPEC.md\n  ✓ extension.js\n  ✓ package.json\n  ✓ test/extension.test.js\n  ℹ 未检测到官方工具，已跳过\n[build] 成功 → build/ 清单校验 + AI 审查未发现阻断性问题，可以继续打包。"
+        },
+        "metaStages": {
+          "init": {
+            "ok": true,
+            "at": "2026-10-20T02:50:16.821Z"
+          },
+          "build": {
+            "ok": true,
+            "at": "2026-10-20T02:50:17.011Z"
+          },
+          "validate": {
+            "ok": true,
+            "at": "2026-10-20T02:50:18.625Z"
+          }
+        },
+        "iterate": "完成 · 通过"
+      },
+      "shots": [
+        "11-vscode-dingtalk-01-prompt.png",
+        "12-vscode-dingtalk-02-intent.png",
+        "13-vscode-dingtalk-03-plan-before-edit.png",
+        "14-vscode-dingtalk-04-plan-edited.png",
+        "15-vscode-dingtalk-05-agent-running.png",
+        "16-vscode-dingtalk-06-agent-done.png",
+        "17-vscode-dingtalk-07-code-tab.png",
+        "18-vscode-dingtalk-08-iterate.png",
+        "19-vscode-dingtalk-09-ship.png"
+      ],
+      "artifact": "/tmp/biz-ws-0is1ph/biz-code-to-dingtalk/dist/biz-code-to-dingtalk-0.0.1.vsix",
+      "artifactList": "Archive:  /tmp/biz-ws-0is1ph/biz-code-to-dingtalk/dist/biz-code-to-dingtalk-0.0.1.vsix\n  Length      Date    Time    Name\n---------  ---------- -----   ----\n      357  2026-10-20 02:50   [Content_Types].xml\n      600  2026-10-20 02:50   extension.vsixmanifest\n       24  2026-10-20 02:50   extension/CHANGELOG.md\n      340  2026-10-20 02:50   extension/README.md\n     1450  2026-10-20 02:50   extension/SPEC.md\n     3231  2026-10-20 02:50   extension/extension.js\n     1588  2026-10-20 02:50   extension/package.json\n      273  2026-10-20 02:50   extension/test/extension.test.js\n---------                     -------\n     7863                     8 files\n",
+      "projectDir": "/tmp/biz-ws-0is1ph/biz-code-to-dingtalk",
+      "mockQuality": "ok-demo",
+      "notes": []
+    },
+    {
+      "id": "excel-weekly",
+      "title": "Office Excel · 一键生成周报摘要",
+      "prompt": "做一个 Excel 插件，把当前表格一键生成周报摘要",
+      "pass": true,
+      "steps": {
+        "intent": {
+          "selected": "ExcelMicrosoft · 办公套件宿主句式「…Excel…插件/扩展」",
+          "all": "ExcelMicrosoft · 办公套件宿主句式「…Excel…插件/扩展」都不是，手动指定"
+        },
+        "run": {
+          "status": "完成 · 通过",
+          "steps": " 准备宿主适配器Excel（office-addin） 创建项目脚手架biz-excel-weekly · 4 个文件 AI 按方案生成代码✎ manifest.xml\n✎ taskpane.html\n✎ taskpane.js\n✎ SPEC.md\n+ commands.html\n+ README.md 构建（第 1 次）  ✓ README.md\n  ✓ SPEC.md\n  ✓ commands.html\n  ✓ manifest.xml\n  ✓ taskpane.html\n  ✓ taskpane.js\n  ℹ 未检测到官方工具，已跳过\n[build] 成功 → build/ 清单校验 + AI 审查未发现阻断性问题，可以继续打包。"
+        },
+        "metaStages": {
+          "init": {
+            "ok": true,
+            "at": "2026-10-20T02:50:29.972Z"
+          },
+          "build": {
+            "ok": true,
+            "at": "2026-10-20T02:50:30.061Z"
+          },
+          "validate": {
+            "ok": true,
+            "at": "2026-10-20T02:50:31.363Z"
+          }
+        },
+        "iterate": "完成 · 通过"
+      },
+      "shots": [
+        "20-excel-weekly-01-prompt.png",
+        "21-excel-weekly-02-intent.png",
+        "22-excel-weekly-03-plan-before-edit.png",
+        "23-excel-weekly-04-plan-edited.png",
+        "24-excel-weekly-05-agent-running.png",
+        "25-excel-weekly-06-agent-done.png",
+        "26-excel-weekly-07-code-tab.png",
+        "27-excel-weekly-08-iterate.png",
+        "28-excel-weekly-09-ship.png"
+      ],
+      "artifact": "/tmp/biz-ws-0is1ph/biz-excel-weekly/dist/biz-excel-weekly-0.0.1.zip",
+      "artifactList": "Archive:  /tmp/biz-ws-0is1ph/biz-excel-weekly/dist/biz-excel-weekly-0.0.1.zip\n  Length      Date    Time    Name\n---------  ---------- -----   ----\n      302  2026-10-20 02:50   README.md\n     1149  2026-10-20 02:50   SPEC.md\n      354  2026-10-20 02:50   commands.html\n      672  2026-10-20 02:50   manifest.xml\n     1153  2026-10-20 02:50   taskpane.html\n     2234  2026-10-20 02:50   taskpane.js\n---------                     -------\n     5864                     6 files\n",
+      "projectDir": "/tmp/biz-ws-0is1ph/biz-excel-weekly",
+      "mockQuality": "ok-demo",
+      "notes": []
+    },
+    {
+      "id": "acme-inventory",
+      "title": "未知宿主 · Acme 库存系统侧边栏",
+      "prompt": "给『Acme 库存系统』做一个侧边栏插件，显示缺货预警",
+      "pass": true,
+      "steps": {
+        "intent": {
+          "selected": "Acme 库存系统（新宿主）厂商库里还没有它，插件工坊会自动学习它的插件规则未知宿主自动扩展",
+          "all": "Acme 库存系统（新宿主）厂商库里还没有它，插件工坊会自动学习它的插件规则未知宿主自动扩展都不是，手动指定"
+        },
+        "run": {
+          "status": "完成 · 通过",
+          "steps": " 准备宿主适配器已自动扩展新宿主：Acme 库存系统（家族 generic，清单 plugin.json） 创建项目脚手架biz-acme-stock-alert · 4 个文件 AI 按方案生成代码✎ plugin.json\n✎ index.js\n✎ README.md\n✎ SPEC.md 构建（第 1 次）[build] 适配器 Acme 库存系统 (generic) · 构建: node --check\n  ✓ README.md\n  ✓ SPEC.md\n  ✓ index.js\n  ✓ plugin.json\n  ℹ 未检测到官方工具，已跳过\n[build] 成功 → build/ 清单校验 + AI 审查未发现阻断性问题，可以继续打包。"
+        },
+        "metaStages": {
+          "init": {
+            "ok": true,
+            "at": "2026-10-20T02:50:40.506Z"
+          },
+          "build": {
+            "ok": true,
+            "at": "2026-10-20T02:50:40.621Z"
+          },
+          "validate": {
+            "ok": true,
+            "at": "2026-10-20T02:50:40.622Z"
+          }
+        },
+        "iterate": "完成 · 通过"
+      },
+      "shots": [
+        "29-acme-inventory-01-prompt.png",
+        "30-acme-inventory-02-intent.png",
+        "31-acme-inventory-03-plan-before-edit.png",
+        "32-acme-inventory-04-plan-edited.png",
+        "33-acme-inventory-05-agent-running.png",
+        "34-acme-inventory-06-agent-done.png",
+        "35-acme-inventory-07-code-tab.png",
+        "36-acme-inventory-08-iterate.png",
+        "37-acme-inventory-09-ship.png"
+      ],
+      "artifact": "/tmp/biz-ws-0is1ph/biz-acme-stock-alert/dist/biz-acme-stock-alert-0.0.1.zip",
+      "artifactList": "Archive:  /tmp/biz-ws-0is1ph/biz-acme-stock-alert/dist/biz-acme-stock-alert-0.0.1.zip\n  Length      Date    Time    Name\n---------  ---------- -----   ----\n      206  2026-10-20 02:50   README.md\n      823  2026-10-20 02:50   SPEC.md\n     1139  2026-10-20 02:50   index.js\n      175  2026-10-20 02:50   plugin.json\n---------                     -------\n     2343                     4 files\n",
+      "projectDir": "/tmp/biz-ws-0is1ph/biz-acme-stock-alert",
+      "mockQuality": "ok-demo",
+      "notes": []
+    },
+    {
+      "id": "blender-rename",
+      "title": "Blender · 一键整理场景物体命名",
+      "prompt": "给 Blender 做一个一键整理场景物体命名的插件",
+      "pass": true,
+      "steps": {
+        "intent": {
+          "selected": "BlenderBlender Foundation · 3D/DCC宿主句式「…Blender…插件/扩展」",
+          "all": "BlenderBlender Foundation · 3D/DCC宿主句式「…Blender…插件/扩展」都不是，手动指定"
+        },
+        "run": {
+          "status": "完成 · 通过",
+          "steps": " 准备宿主适配器Blender（blender） 创建项目脚手架biz-blender-rename · 3 个文件 AI 按方案生成代码✎ blender_manifest.toml\n✎ __init__.py\n✎ SPEC.md\n+ tests/test_smoke.py\n+ README.md 构建（第 1 次）[build] 适配器 Blender (blender) · 构建: python3 -m py_compile\n  ✓ README.md\n  ✓ SPEC.md\n  ✓ __init__.py\n  ✓ blender_manifest.toml\n  ✓ tests/test_smoke.py\n  ℹ 未检测到官方工具，已跳过\n[build] 成功 → build/ 清单校验 + AI 审查未发现阻断性问题，可以继续打包。"
+        },
+        "metaStages": {
+          "init": {
+            "ok": true,
+            "at": "2026-10-20T02:50:48.405Z"
+          },
+          "build": {
+            "ok": true,
+            "at": "2026-10-20T02:50:48.458Z"
+          },
+          "validate": {
+            "ok": true,
+            "at": "2026-10-20T02:50:48.459Z"
+          }
+        },
+        "iterate": "完成 · 通过"
+      },
+      "shots": [
+        "38-blender-rename-01-prompt.png",
+        "39-blender-rename-02-intent.png",
+        "40-blender-rename-03-plan-before-edit.png",
+        "41-blender-rename-04-plan-edited.png",
+        "42-blender-rename-05-agent-running.png",
+        "43-blender-rename-06-agent-done.png",
+        "44-blender-rename-07-code-tab.png",
+        "45-blender-rename-08-iterate.png",
+        "46-blender-rename-09-ship.png"
+      ],
+      "artifact": "/tmp/biz-ws-0is1ph/biz-blender-rename/dist/biz-blender-rename-0.0.1.zip",
+      "artifactList": "Archive:  /tmp/biz-ws-0is1ph/biz-blender-rename/dist/biz-blender-rename-0.0.1.zip\n  Length      Date    Time    Name\n---------  ---------- -----   ----\n      257  2026-10-20 02:50   biz_blender_rename/README.md\n     1169  2026-10-20 02:50   biz_blender_rename/SPEC.md\n     2118  2026-10-20 02:50   biz_blender_rename/__init__.py\n      247  2026-10-20 02:50   biz_blender_rename/blender_manifest.toml\n      210  2026-10-20 02:50   biz_blender_rename/tests/test_smoke.py\n---------                     -------\n     4001                     5 files\n",
+      "projectDir": "/tmp/biz-ws-0is1ph/biz-blender-rename",
+      "mockQuality": "ok-demo",
+      "notes": []
+    }
+  ],
+  "friction": [],
+  "p0": [],
+  "p1": [],
+  "p2": []
+}

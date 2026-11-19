@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>插件工坊 · 通用 AI 辅助插件开发工作台</title>
+  <script>document.documentElement.dataset.theme = localStorage.getItem('pide.theme') || 'light';</script>
+  <link rel="stylesheet" href="assets/codicon.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home" data-chat="closed">
+<div id="app">
+  <!-- 侧边栏导航 -->
+  <aside id="sidebar" aria-label="主导航">
+    <div class="brand">
+      <span class="brand-mark"><img src="assets/app-icon.png" alt="" width="32" height="32"></span>
+      <span class="brand-text"><b>插件工坊</b><small>AI 插件开发工作台</small></span>
+    </div>
+    <button type="button" id="btn-new-ai" class="btn btn-primary btn-block"><i class="codicon codicon-add"></i> 新建插件</button>
+    <nav id="nav">
+      <div class="nav-section">工作台</div>
+      <button type="button" class="nav-item on" data-view="home" id="act-home"><i class="codicon codicon-home"></i><span>首页</span></button>
+      <button type="button" class="nav-item" data-view="projects"><i class="codicon codicon-folder-library"></i><span>我的项目</span><span id="proj-count" class="nav-count"></span></button>
+      <button type="button" class="nav-item nav-sub hidden" data-view="project" id="nav-cur-proj"><i class="codicon codicon-plug"></i><span id="t-proj">当前项目</span></button>
+      <div class="nav-section">资源</div>
+      <button type="button" class="nav-item" data-view="vendors"><i class="codicon codicon-library"></i><span>厂商库</span><span id="vendor-count" class="nav-count"></span></button>
+      <button type="button" class="nav-item" data-view="publish"><i class="codicon codicon-rocket"></i><span>发布中心</span></button>
+      <button type="button" class="nav-item" data-view="env" id="nav-env"><i class="codicon codicon-device-desktop"></i><span>环境检测</span><span id="env-count" class="nav-count"></span></button>
+      <div class="nav-section">系统</div>
+      <button type="button" class="nav-item" data-view="settings"><i class="codicon codicon-settings-gear"></i><span>设置</span></button>
+    </nav>
+    <div class="sidebar-foot">
+      <span id="sb-ai" class="foot-row"><i class="codicon codicon-sparkle"></i> AI: —</span>
+      <span id="sb-ide" class="foot-row"><i class="codicon codicon-circle-outline"></i> 代码编辑器</span>
+      <span id="sb-vendors" class="foot-row"><i class="codicon codicon-library"></i> 厂商 —</span>
+    </div>
+  </aside>
+
+  <div id="shell">
+    <!-- 顶栏（无边框窗口拖拽区） -->
+    <header id="topbar">
+      <div class="crumbs"><span id="page-title">首页</span><span id="page-sub" class="muted"></span></div>
+      <div class="topbar-actions">
+        <span id="sb-stage" class="status-chip" data-state=""></span>
+        <button type="button" id="btn-log" class="icon-btn" data-tip="活动记录"><i class="codicon codicon-pulse"></i><span id="log-dot" class="dot hidden"></span></button>
+        <button type="button" id="btn-chat-toggle" class="icon-btn" data-tip="AI 助手"><i class="codicon codicon-comment-discussion"></i></button>
+        <button type="button" id="btn-theme" class="icon-btn" data-tip="切换深色/浅色"><i class="codicon codicon-color-mode"></i></button>
+        <span id="win-ctl" class="win-ctl hidden">
+          <button type="button" data-win="min" aria-label="最小化"><i class="codicon codicon-chrome-minimize"></i></button>
+          <button type="button" data-win="max" aria-label="最大化"><i class="codicon codicon-chrome-maximize"></i></button>
+          <button type="button" data-win="close" class="close" aria-label="关闭"><i class="codicon codicon-chrome-close"></i></button>
+        </span>
+      </div>
+    </header>
+
+    <div id="body">
+      <main id="content">
+        <!-- 首页 -->
+        <section id="page-home" class="page on">
+          <div class="home-body">
+        <div class="demo-banner hidden" data-demo-banner></div>
+        <section class="hero">
+          <h1><i class="codicon codicon-sparkle"></i> 描述你想做的插件</h1>
+          <p class="hint">任意软件都可以：说清楚「给谁（宿主软件）做什么」，AI 会识别宿主、给出可编辑的方案，然后生成项目、构建并自动修复。</p>
+          <div class="hero-input">
+            <textarea id="home-prompt" rows="3" placeholder="例如：做一个 Chrome 扩展，一键把当前网页保存为 Markdown，并支持快捷键"></textarea>
+            <button type="button" id="btn-home-go" class="btn btn-primary btn-lg"><i class="codicon codicon-arrow-right"></i> 开始</button>
+          </div>
+          <div id="home-examples" class="chips"></div>
+        </section>
+
+        <ol id="flow-steps" class="flow-steps">
+          <li data-k="intent"><i class="codicon codicon-search"></i><span>识别宿主</span></li>
+          <li data-k="plan"><i class="codicon codicon-checklist"></i><span>确认方案</span></li>
+          <li data-k="run"><i class="codicon codicon-gear"></i><span>生成 · 构建 · 自动修复</span></li>
+          <li data-k="iterate"><i class="codicon codicon-comment-discussion"></i><span>对话迭代</span></li>
+          <li data-k="ship"><i class="codicon codicon-package"></i><span>打包发布</span></li>
+        </ol>
+
+        <section id="card-intent" class="card hidden">
+          <h3><i class="codicon codicon-search"></i> 第 1 步 · 目标宿主 <span id="intent-conf" class="badge"></span></h3>
+          <div id="intent-cands" class="cands"></div>
+          <div class="row-end"><button type="button" id="btn-plan" class="btn btn-primary"><i class="codicon codicon-checklist"></i> 生成方案</button></div>
+        </section>
+
+        <section id="card-plan" class="card hidden">
+          <h3><i class="codicon codicon-checklist"></i> 第 2 步 · 方案（可编辑）</h3>
+          <div class="plan-grid">
+            <div class="plan-form">
+              <label>项目名 <small class="muted">（英文小写和短横线，用作文件名）</small><input id="plan-name" pattern="[a-z0-9][a-z0-9-]*"></label>
+              <label>一句话概述 <input id="plan-summary"></label>
+              <label>插件要做的事（每行一件） <textarea id="plan-features" rows="5"></textarea></label>
+              <label>怎样算做好了（每行一条，AI 会按这些自检） <textarea id="plan-accept" rows="3"></textarea></label>
+              <label class="inline">如果出错，让 AI 自动修正最多
+                <select id="plan-maxfix"><option>0</option><option>1</option><option>2</option><option selected>3</option><option>5</option></select> 次</label>
+            </div>
+            <div id="plan-knowledge" class="knowledge"></div>
+          </div>
+          <div class="row-end"><button type="button" id="btn-run" class="btn btn-primary"><i class="codicon codicon-play"></i> 生成项目并构建</button></div>
+        </section>
+
+        <section id="card-run" class="card hidden">
+          <h3><i class="codicon codicon-gear"></i> 第 3 步 · AI 执行过程 <span id="run-status" class="badge"></span>
+            <button type="button" id="btn-job-cancel" class="btn btn-danger btn-sm hidden" title="取消当前任务"><i class="codicon codicon-debug-stop"></i> 取消</button>
+          </h3>
+          <div id="confirm-bar" class="confirm-bar hidden">
+            <div class="cf-info"><i class="codicon codicon-diff"></i> <span id="confirm-label">等待确认 AI 改动</span></div>
+            <div id="confirm-files" class="confirm-files"></div>
+            <div class="row-end">
+              <button type="button" id="btn-confirm-reject" class="btn btn-secondary btn-sm"><i class="codicon codicon-close"></i> 拒绝</button>
+              <button type="button" id="btn-confirm-approve" class="btn btn-primary btn-sm"><i class="codicon codicon-check"></i> 应用并继续</button>
+            </div>
+          </div>
+          <div class="demo-banner hidden" data-demo-banner></div>
+          <ol id="agent-steps" class="agent-steps"></ol>
+          <div id="run-result" class="hidden">
+            <div id="run-guide" class="knowledge"></div>
+            <div id="run-hostinstall" class="install-box hostinstall hidden"></div>
+            <div id="run-install" class="install-box hidden"></div>
+            <div class="iterate-row">
+              <input id="iter-prompt" placeholder="继续迭代：例如「增加一个设置项，可配置导出目录」（留空 = 仅构建并自动修复）">
+              <button type="button" id="btn-iterate" class="btn btn-primary"><i class="codicon codicon-sparkle"></i> 迭代</button>
+            </div>
+            <div class="row-end">
+              <button type="button" id="btn-open-ide" class="btn btn-ghost btn-sm"><i class="codicon codicon-vm"></i> 在 IDE 中打开</button>
+              <button type="button" id="btn-undo" class="btn btn-ghost btn-sm"><i class="codicon codicon-discard"></i> 撤销上次 AI 改动</button>
+              <button type="button" id="btn-ship" class="btn btn-primary"><i class="codicon codicon-package"></i> 打包 + 发布（dry-run）</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="home-cols">
+          <section class="card">
+            <h3><i class="codicon codicon-history"></i> 最近项目</h3>
+            <ul id="recent-list" class="recent"></ul>
+            <div id="recent-empty" class="empty-hint">还没有项目。在上方描述你的第一个插件吧。</div>
+          </section>
+          <section id="onboarding" class="card">
+            <h3><i class="codicon codicon-lightbulb"></i> 上手指南 <button type="button" id="btn-onb-hide" class="btn btn-ghost btn-sm" title="不再显示"><i class="codicon codicon-close"></i></button></h3>
+            <ol class="onb">
+              <li><b>一句话描述需求</b>：写明宿主软件（如 Blender、飞书、公司自研系统「XX」），未知宿主会自动扩展适配器。</li>
+              <li><b>审阅方案</b>：修改项目名 / 功能点；右侧是这个软件的插件须知（技术细节已折叠），AI 生成时会自动遵守。</li>
+              <li><b>看 AI 干活</b>：生成 → 构建 → 失败自动诊断修复（可设上限），每一步都可见；每次 AI 写盘前都有检查点，可随时撤销。</li>
+              <li><b>迭代与发布</b>：在结果卡片或右侧 AI 助手继续对话；满意后打包并生成发布清单。</li>
+            </ol>
+            <p class="hint">进阶：左侧「厂商目录」浏览 700+ 宿主，「生命周期」手动执行各阶段，「设置」接入 OpenAI 兼容模型（默认离线 Mock）。</p>
+          </section>
+        </div>
+      </div>
+        </section>
+
+        <!-- 我的项目 -->
+        <section id="page-projects" class="page">
+          <div class="page-head">
+            <div><h1>我的项目</h1><p class="muted">所有插件项目，按最近活动排序。</p></div>
+            <div class="page-actions">
+              <button type="button" id="btn-new" class="btn btn-secondary"><i class="codicon codicon-new-file"></i> 从模板新建</button>
+              <button type="button" class="btn btn-primary" data-goto="home"><i class="codicon codicon-sparkle"></i> 用 AI 新建</button>
+            </div>
+          </div>
+          <ul id="proj-list" class="proj-grid"></ul>
+          <div id="proj-empty" class="empty-state"><i class="codicon codicon-folder-library"></i><p>还没有项目</p><small>回到首页，用一句话描述你的第一个插件。</small></div>
+        </section>
+
+        <!-- 项目详情 -->
+        <section id="page-project" class="page">
+          <div class="page-head">
+            <div>
+              <h1 id="pd-title">项目</h1>
+              <p class="muted"><span id="sb-proj">无项目</span> · <span id="pipe-hint">先选择项目</span></p>
+            </div>
+            <div class="page-actions" id="pipe-buttons">
+              <button type="button" data-stage="build" class="btn btn-secondary btn-stage"><i class="codicon codicon-tools"></i><span>构建</span></button>
+              <button type="button" data-stage="validate" class="btn btn-secondary btn-stage"><i class="codicon codicon-beaker"></i><span>AI 校验</span></button>
+              <button type="button" data-stage="package" class="btn btn-secondary btn-stage"><i class="codicon codicon-package"></i><span>打包</span></button>
+              <button type="button" data-stage="publish" class="btn btn-primary btn-stage"><i class="codicon codicon-cloud-upload"></i><span>发布（dry-run）</span></button>
+            </div>
+          </div>
+          <div class="demo-banner hidden" data-demo-banner></div>
+          <div id="pipeline-bar" class="stepper" aria-label="生命周期"></div>
+          <div id="tabs" class="segmented" role="tablist">
+            <button type="button" data-tab="overview" class="on" role="tab"><i class="codicon codicon-dashboard"></i> 概览</button>
+            <button type="button" data-tab="aidev" role="tab"><i class="codicon codicon-sparkle"></i> AI 开发</button>
+            <button type="button" data-tab="files" role="tab"><i class="codicon codicon-files"></i> 文件</button>
+            <button type="button" data-tab="code" role="tab"><i class="codicon codicon-code"></i> 代码</button>
+            <button type="button" data-tab="versions" role="tab"><i class="codicon codicon-history"></i> 版本与快照</button>
+          </div>
+
+          <div id="tab-overview" class="tab on">
+            <div id="proj-checklist" class="card checklist hidden">
+              <h3><i class="codicon codicon-checklist"></i> 项目上手清单 <button type="button" id="btn-checklist-hide" class="btn btn-ghost btn-sm" title="隐藏"><i class="codicon codicon-close"></i></button></h3>
+              <ul id="checklist-items" class="onb"></ul>
+            </div>
+            <div class="grid-2">
+              <div class="card">
+                <h3><i class="codicon codicon-info"></i> 项目信息</h3>
+                <dl id="proj-meta" class="meta-list"></dl>
+              </div>
+              <div class="card" id="debug-panel">
+                <h3><i class="codicon codicon-debug-alt"></i> AI 调试 <button type="button" id="btn-ai-debug" class="btn btn-ghost btn-sm"><i class="codicon codicon-refresh"></i> 重新分析</button></h3>
+                <div id="debug-tips" class="muted pre-wrap">构建/校验失败后，这里会显示可操作的建议和一键修复。</div>
+                <div id="debug-fixes"></div>
+              </div>
+            </div>
+            <div class="card">
+              <h3><i class="codicon codicon-file-zip"></i> 产物</h3>
+              <div id="pd-artifacts" class="muted">尚未打包。</div>
+              <div id="pd-hostinstall" class="install-box hostinstall hidden"></div>
+              <div id="pd-install" class="install-box hidden"></div>
+            </div>
+            <div class="card" id="docs-panel">
+              <h3><i class="codicon codicon-book"></i> 项目资料 <small class="muted">（AI 写代码时会参考这里的内容）</small></h3>
+              <p class="muted small">粘贴需求文档、接口说明、业务规则，或填一个网页地址（会自动抓取正文）。</p>
+              <div class="input-row"><input id="doc-title" class="input" placeholder="资料标题（可选）"><input id="doc-url" class="input" placeholder="网页地址，例如 https://example.com/api-doc"></div>
+              <textarea id="doc-text" class="textarea" rows="3" placeholder="或直接粘贴文字内容…"></textarea>
+              <div class="row-end"><button type="button" id="btn-doc-add" class="btn btn-secondary"><i class="codicon codicon-add"></i> 添加资料</button></div>
+              <ul id="doc-list" class="list"></ul>
+            </div>
+          </div>
+
+          <div id="tab-aidev" class="tab">
+            <div class="card">
+              <h3><i class="codicon codicon-sparkle"></i> 多文件 AI 开发</h3>
+              <div class="input-row">
+                <input id="ai-proj-prompt" class="input" placeholder="自然语言需求：添加命令、设置项、测试…">
+                <button type="button" id="btn-ai-proj" class="btn btn-secondary"><i class="codicon codicon-sparkle"></i> 生成预览</button>
+                <button type="button" id="btn-ai-proj-apply" class="btn btn-primary" disabled><i class="codicon codicon-check"></i> 应用</button>
+              </div>
+              <p id="ai-diff-summary" class="muted">描述需求后会生成多文件预览（清单 / 入口 / README / 测试），确认后才写入。</p>
+              <pre id="ai-diff-view" class="code-block"></pre>
+            </div>
+          </div>
+
+          <div id="tab-files" class="tab">
+            <div class="files-layout">
+              <div class="card files-list-card">
+                <h3><i class="codicon codicon-files"></i> 文件</h3>
+                <ul id="file-list" class="list"></ul>
+                <div id="file-empty" class="muted">选择项目后显示源文件。</div>
+              </div>
+              <div class="card editor-card">
+                <div class="input-row">
+                  <span id="qe-path" class="path-label">未打开文件</span>
+                  <button type="button" id="btn-save" class="btn btn-primary btn-sm"><i class="codicon codicon-save"></i> 保存</button>
+                </div>
+                <textarea id="quick-editor" class="code-editor" spellcheck="false" placeholder="从左侧选择文件进行编辑"></textarea>
+                <div class="input-row">
+                  <input id="ai-dev-prompt" class="input" placeholder="对当前文件描述改动，例如「添加一个计数功能」">
+                  <button type="button" id="btn-ai-dev" class="btn btn-secondary"><i class="codicon codicon-sparkle"></i> AI 修改</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="tab-code" class="tab">
+            <div class="code-frame-wrap">
+              <iframe id="ide-frame" title="代码编辑器"></iframe>
+              <div id="ide-loading" class="ide-loading hidden"><i class="codicon codicon-loading codicon-modifier-spin"></i><p>正在启动代码编辑器…</p><small>首次加载约需数秒</small></div>
+              <div class="ide-toolbar"><button type="button" id="btn-ide-retry" class="btn btn-secondary btn-sm"><i class="codicon codicon-refresh"></i> 重新加载编辑器</button></div>
+              <div id="ide-off" class="hidden empty-state"><i class="codicon codicon-code"></i><p>代码编辑器暂不可用</p><small>不影响构建、校验与打包。请用「文件」页查看或编辑代码；完整编辑器需在安装时带上内嵌 IDE 组件。</small></div>
+            </div>
+          </div>
+
+          <div id="tab-versions" class="tab">
+            <div class="grid-2">
+              <div class="card">
+                <h3><i class="codicon codicon-tag"></i> 版本</h3>
+                <div class="input-row">
+                  <select id="bump-level" class="select" aria-label="版本升级级别"><option>patch</option><option>minor</option><option>major</option></select>
+                  <button type="button" data-stage="version" class="btn btn-secondary btn-stage"><i class="codicon codicon-tag"></i><span>升级版本</span></button>
+                  <button type="button" data-stage="deprecate" class="btn btn-danger btn-stage"><i class="codicon codicon-circle-slash"></i><span>弃用</span></button>
+                </div>
+                <ul id="pd-releases" class="list"></ul>
+              </div>
+              <div class="card" id="cp-panel">
+                <h3><i class="codicon codicon-history"></i> 快照 · 撤销 AI 改动</h3>
+                <ul id="cp-list" class="list cp-list"></ul>
+                <div id="cp-empty" class="muted">AI 每次写盘前都会自动创建快照。</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 厂商库 -->
+        <section id="page-vendors" class="page">
+          <div class="page-head">
+            <div><h1>厂商库</h1><p class="muted">覆盖 IDE、浏览器、设计、办公、DCC、SaaS、AI 智能体等宿主；找不到的宿主可以让 AI 扩展。</p></div>
+          </div>
+          <div class="toolbar">
+            <div class="search"><i class="codicon codicon-search"></i><input id="vendor-q" type="search" class="input" placeholder="搜索：VS Code、Blender、飞书…" autocomplete="off"></div>
+            <select id="vendor-cat" class="select" aria-label="按类别筛选"><option value="">全部类别</option></select>
+          </div>
+          <div class="vendors-layout">
+            <div>
+              <ul id="vendor-list" class="vendor-grid"></ul>
+              <div id="vendor-empty" class="empty-state hidden"><i class="codicon codicon-search"></i><p>没有匹配的厂商</p><small>换个关键词，或在右侧让 AI 扩展新宿主。</small></div>
+            </div>
+            <div class="vendor-side">
+              <div class="card">
+                <div id="vendor-detail-empty" class="muted">选择一个厂商查看适配器详情与开发知识。</div>
+                <div id="vendor-detail" class="hidden"></div>
+              </div>
+              <div class="card">
+                <h3><i class="codicon codicon-wand"></i> AI 扩展新厂商</h3>
+                <p class="muted">用自然语言描述新宿主，AI 会生成适配器并加入厂商库。</p>
+                <textarea id="ai-vendor-desc" class="textarea" rows="3" placeholder="例如：为「Acme CAD」开发 Python 插件，类别：CAD"></textarea>
+                <div class="row-end"><button type="button" id="btn-ai-vendor" class="btn btn-primary"><i class="codicon codicon-sparkle"></i> 生成适配器</button></div>
+                <pre id="ai-vendor-out" class="code-block small"></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 环境检测 v1.3 -->
+        <section id="page-env" class="page">
+          <div class="page-head">
+            <div><h1>环境检测</h1><p class="muted">看看这台电脑装了哪些软件。做好的插件可以一键装进去，直接打开软件试用。</p></div>
+            <button type="button" id="btn-env-scan" class="btn btn-secondary"><i class="codicon codicon-refresh"></i> 重新检测</button>
+          </div>
+          <div id="env-stats" class="stats"></div>
+          <div class="toolbar"><label class="check"><input type="checkbox" id="env-only"> 只看已安装</label><span id="env-meta" class="muted small"></span></div>
+          <div class="card table-card"><table id="env-table" class="table"><thead><tr><th>软件</th><th>状态</th><th>版本</th><th>位置</th><th>可开发的插件类型</th><th></th></tr></thead><tbody></tbody></table></div>
+        </section>
+
+        <!-- 发布中心 -->
+        <section id="page-publish" class="page">
+          <div class="page-head">
+            <div><h1>发布中心</h1><p class="muted">所有项目的打包产物与发布记录。真实发布需要配置商店凭据，当前生成 dry-run 发布清单。</p></div>
+          </div>
+          <div id="publish-stats" class="stats"></div>
+          <div class="card table-card"><table id="publish-table" class="table"><thead><tr><th>项目</th><th>宿主</th><th>版本</th><th>状态</th><th>产物</th><th>发布</th><th></th></tr></thead><tbody></tbody></table>
+          <div id="publish-empty" class="empty-state hidden"><i class="codicon codicon-rocket"></i><p>暂无项目</p></div></div>
+        </section>
+
+        <!-- 设置 -->
+        <section id="page-settings" class="page">
+          <div class="page-head"><div><h1>设置</h1><p class="muted">AI 提供方与外观。</p></div></div>
+          <div class="card wizard" id="ai-wizard">
+            <h3><i class="codicon codicon-plug"></i> 连接 AI 模型 <small class="muted">三步完成：选服务商 → 填 API Key → 测试连接</small></h3>
+            <ol class="wz-steps"><li>选择你有账号的 AI 服务商</li><li>到服务商官网复制 API Key 粘贴到下方</li><li>点「测试连接」，成功后「保存设置」</li></ol>
+            <div id="wz-presets" class="wz-presets"></div>
+            <div id="wz-hint" class="muted small"></div>
+            <div class="row-end">
+              <button type="button" id="btn-test-llm" class="btn btn-secondary"><i class="codicon codicon-debug-disconnect"></i> 测试连接</button>
+            </div>
+            <p id="wz-result" class="wz-result hidden"></p>
+          </div>
+          <div class="grid-2">
+            <div class="card form">
+              <h3><i class="codicon codicon-sparkle"></i> AI 提供方</h3>
+              <p class="muted">默认使用离线 mock，不需要 API Key。也可以接入 OpenAI / DeepSeek / Ollama 等兼容接口。</p>
+              <label class="field">提供方<select id="s-provider" class="select"><option value="mock">mock（离线）</option><option value="openai">OpenAI 兼容</option></select></label>
+              <label class="field">Base URL<input id="s-base" class="input" placeholder="https://api.openai.com/v1"></label>
+              <label class="field">API Key<input id="s-key" class="input" type="password" placeholder="仅在线提供方需要"></label>
+              <label class="field">模型<input id="s-model" class="input" placeholder="gpt-4o-mini / deepseek-chat / llama3"></label>
+              <label class="field">Temperature<input id="s-temp" class="input" type="number" min="0" max="2" step="0.1" value="0.2"></label>
+              <label class="field toggle-field"><span>自动应用 AI 改动</span>
+                <input type="checkbox" id="s-auto-apply" checked>
+                <small class="muted">关闭后，Agent 每步写盘前会暂停并展示文件级 diff，需你批准或拒绝。</small>
+              </label>
+              <div id="toolchain-status" class="muted small mt"></div>
+              <div class="row-end"><button type="button" id="btn-save-settings" class="btn btn-primary"><i class="codicon codicon-save"></i> 保存设置</button></div>
+              <p id="settings-msg" class="ok-msg hidden"></p>
+            </div>
+            <div class="card">
+              <h3><i class="codicon codicon-color-mode"></i> 外观</h3>
+              <div id="theme-seg" class="segmented">
+                <button type="button" data-theme-set="light"><i class="codicon codicon-lightbulb"></i> 浅色</button>
+                <button type="button" data-theme-set="dark"><i class="codicon codicon-moon"></i> 深色</button>
+              </div>
+              <h3 class="mt"><i class="codicon codicon-book"></i> 常用接口</h3>
+              <pre class="code-block small" id="settings-hint">DeepSeek: https://api.deepseek.com/v1
+OpenAI: https://api.openai.com/v1
+Ollama: http://127.0.0.1:11434/v1 （API Key 任意）
+也可以用环境变量 PLUGIN_IDE_LLM_*</pre>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- AI 助手 -->
+      <aside id="ai" class="chat-panel">
+        <div class="chat-head"><span class="avatar"><i class="codicon codicon-sparkle"></i></span><div><b>AI 助手</b><small id="chat-ctx" class="muted">未选择项目</small></div>
+          <button type="button" id="btn-chat-close" class="icon-btn" aria-label="收起"><i class="codicon codicon-chevron-right"></i></button></div>
+        <div id="chat">
+          <div class="chat-welcome muted">你可以问插件开发、生命周期或厂商适配的问题，也可以让我执行「运行构建」「创建文件 …」，或者直接描述要添加的功能。</div>
+        </div>
+        <div id="chat-activity" class="chat-activity hidden" title="紧凑活动时间线（状态类消息会折叠到这里）"></div>
+        <div id="chat-actions"></div>
+        <div class="chat-compose">
+          <textarea id="chat-in" rows="2" class="textarea" placeholder="输入消息，Ctrl+Enter 发送"></textarea>
+          <button type="button" id="btn-chat" class="btn btn-primary btn-icon" aria-label="发送"><i class="codicon codicon-send"></i></button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- 活动记录抽屉 -->
+<div id="panel" class="drawer" aria-hidden="true">
+  <div class="drawer-head"><b><i class="codicon codicon-pulse"></i> 活动记录</b>
+    <button type="button" id="btn-clear" class="btn btn-ghost btn-sm"><i class="codicon codicon-clear-all"></i> 清空</button>
+    <button type="button" id="btn-log-close" class="icon-btn" aria-label="关闭"><i class="codicon codicon-close"></i></button></div>
+  <pre id="log"></pre>
+</div>
+<div id="toasts" aria-live="polite"></div>
+
+<dialog id="dlg-new">
+  <form method="dialog" id="form-new">
+    <h3><i class="codicon codicon-new-file"></i> 新建插件项目</h3>
+    <p class="hint">选择目标厂商后生成脚手架与清单文件。</p>
+    <label>目标厂商
+      <input id="new-vendor" list="vendor-dl" placeholder="输入搜索或选择…" required autocomplete="off">
+    </label>
+    <datalist id="vendor-dl"></datalist>
+    <label>项目名
+      <input id="new-name" placeholder="my-plugin" required pattern="[A-Za-z0-9][A-Za-z0-9_-]*" title="字母数字、下划线或连字符">
+    </label>
+    <label>描述 <input id="new-desc" placeholder="可选描述"></label>
+    <menu>
+      <button type="submit" value="cancel" class="btn btn-secondary">取消</button>
+      <button type="submit" id="btn-create" value="ok" class="btn btn-primary"><i class="codicon codicon-add"></i> 创建</button>
+    </menu>
+  </form>
+</dialog>
+
+<dialog id="dlg-confirm" class="dlg-confirm">
+  <div class="cf-body"><span class="cf-icon"><i id="dlg-confirm-icon" class="codicon codicon-question"></i></span>
+    <div><h3 id="dlg-confirm-title">确认</h3><p id="dlg-confirm-msg" class="muted"></p></div></div>
+  <menu><button type="button" id="dlg-confirm-cancel" class="btn btn-secondary">取消</button><button type="button" id="dlg-confirm-ok" class="btn btn-primary">确认</button></menu>
+</dialog>
+
+<dialog id="dlg-ai-preview" class="dlg-wide">
+  <h3><i class="codicon codicon-diff"></i> AI 开发预览</h3>
+  <p id="dlg-ai-summary" class="muted"></p>
+  <div class="pv-layout"><div id="dlg-ai-filelist" class="pv-list"></div><pre id="dlg-ai-files" class="code-block pv-code"></pre></div>
+  <p class="muted small"><i class="codicon codicon-history"></i> 写入前会自动创建快照，可在「版本与快照」中撤销。</p>
+  <menu>
+    <button type="button" id="btn-ai-preview-cancel" class="btn btn-secondary">取消</button>
+    <button type="button" id="btn-ai-preview-apply" class="btn btn-primary"><i class="codicon codicon-check"></i> 应用到磁盘</button>
+  </menu>
+</dialog>
+
+<dialog id="dlg-cp" class="dlg-wide">
+  <h3><i class="codicon codicon-diff"></i> <span id="cp-title">快照对比</span></h3>
+  <p id="cp-summary" class="muted"></p>
+  <div class="pv-layout"><div id="cp-files" class="pv-list"></div><pre id="cp-diff" class="code-block pv-code"></pre></div>
+  <menu>
+    <button type="button" id="btn-cp-close" class="btn btn-secondary">关闭</button>
+    <button type="button" id="btn-cp-file" class="btn btn-secondary" disabled><i class="codicon codicon-discard"></i> 只恢复这个文件</button>
+    <button type="button" id="btn-cp-all" class="btn btn-primary"><i class="codicon codicon-history"></i> 全部恢复到此快照</button>
+  </menu>
+</dialog>
+<script src="app.js"></script>
+<script src="home.js"></script>
+<script src="v12.js"></script>
+<script src="v13.js"></script>
+</body>
+</html>

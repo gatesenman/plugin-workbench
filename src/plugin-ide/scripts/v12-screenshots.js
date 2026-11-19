@@ -1,0 +1,15 @@
+const { _electron } = require('@playwright/test'); const path=require('path'),fs=require('fs'),os=require('os');
+(async()=>{ const WS=fs.mkdtempSync(path.join(os.tmpdir(),'s-')),D=fs.mkdtempSync(path.join(os.tmpdir(),'d-'));
+const app=await _electron.launch({args:['--no-sandbox','.'],env:{...process.env,PLUGIN_IDE_WORKSPACE:WS,PLUGIN_IDE_DATA:D,PLUGIN_IDE_LLM_PROVIDER:'mock'}});
+const p=await app.firstWindow(); await p.setViewportSize({width:1440,height:900}); await p.locator('#log').filter({hasText:'[ready]'}).waitFor({state:'attached',timeout:60000});
+const O='screenshots/v1.2/'; const s=n=>p.screenshot({path:O+n});
+await p.waitForTimeout(800); await s('01-home-demo-banner.png');
+await p.fill('#home-prompt','给 VS Code 写个插件，统计当前文件的代码行数并显示在状态栏'); await p.click('#btn-home-go'); await p.locator('#intent-cands .cand.sel').waitFor(); await s('02-intent-cards.png');
+await p.click('#btn-plan'); await p.locator('#plan-knowledge .plain-lead').waitFor(); await p.locator('#card-plan').scrollIntoViewIfNeeded(); await s('03-plan-plain.png');
+await p.fill('#plan-name','line-counter'); await p.click('#btn-run'); await p.locator('#run-status',{hasText:'完成'}).waitFor({timeout:60000});
+await p.click('#btn-ship'); await p.locator('#run-install h4').first().waitFor({timeout:60000}); await p.locator('#run-install').scrollIntoViewIfNeeded(); await s('04-install-wizard.png');
+await p.locator('#run-install .publish-explain').scrollIntoViewIfNeeded(); await s('05-publish-explain.png');
+await p.evaluate(()=>PluginIDE.openProject('line-counter')); await p.click('#tabs [data-tab=code]'); await p.waitForTimeout(15000); await s('06-code-tab-editor.png');
+await p.click('#tabs [data-tab=versions]'); await p.locator('#cp-list .btn-cpdiff').first().waitFor(); fs.appendFileSync(path.join(WS,'line-counter','README.md'),'\n新增说明\n'); await p.locator('#cp-list .btn-cpdiff').first().click(); await p.locator('#cp-files .cf-file').first().click(); await s('07-checkpoint-diff.png'); await p.click('#btn-cp-close');
+await p.click('#nav [data-view=settings]'); await p.click('#wz-presets [data-p=deepseek]'); await p.click('#btn-test-llm'); await p.locator('#wz-result:not(.hidden)').waitFor({timeout:30000}); await s('08-ai-wizard.png');
+await app.evaluate(({app})=>app.quit()).catch(()=>{}); process.exit(0);})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,509 @@
+# family|category|company|names(逗号分隔)
+vscode-ext|IDE/代码编辑器|Microsoft|Visual Studio Code,VS Code Insiders,VS Code for the Web,GitHub Codespaces
+vscode-ext|IDE/代码编辑器|Anysphere|Cursor
+vscode-ext|IDE/代码编辑器|Codeium|Windsurf
+vscode-ext|IDE/代码编辑器|VSCodium|VSCodium
+vscode-ext|IDE/代码编辑器|Eclipse Foundation|Eclipse Theia,Theia IDE
+vscode-ext|IDE/代码编辑器|Coder|code-server
+vscode-ext|IDE/代码编辑器|Gitpod|OpenVSCode Server,Gitpod
+vscode-ext|IDE/代码编辑器|Alibaba|Lingma IDE
+vscode-ext|IDE/代码编辑器|ByteDance|Trae
+vscode-ext|IDE/代码编辑器|Amazon|Kiro
+vscode-ext|IDE/代码编辑器|Google|Firebase Studio,Project IDX
+vscode-ext|IDE/代码编辑器|Positron|Positron
+vscode-ext|IDE/代码编辑器|Void|Void Editor
+vscode-ext|IDE/代码编辑器|Huawei|CodeArts IDE
+vscode-ext|IDE/代码编辑器|Tencent|CodeBuddy IDE
+vscode-ext|IDE/代码编辑器|Eclipse Foundation|Eclipse Che
+jetbrains|IDE/代码编辑器|JetBrains|IntelliJ IDEA,PyCharm,WebStorm,PhpStorm,GoLand,RubyMine,CLion,Rider,DataGrip,DataSpell,RustRover,Aqua,Fleet,AppCode,Writerside,MPS
+jetbrains|IDE/代码编辑器|Google|Android Studio
+jetbrains|IDE/代码编辑器|Huawei|DevEco Studio
+editor-plugin|IDE/代码编辑器|Microsoft|Visual Studio
+editor-plugin|IDE/代码编辑器|Eclipse Foundation|Eclipse IDE
+editor-plugin|IDE/代码编辑器|Apache|NetBeans
+editor-plugin|IDE/代码编辑器|Sublime HQ|Sublime Text,Sublime Merge
+editor-plugin|IDE/代码编辑器|Vim|Vim
+editor-plugin|IDE/代码编辑器|Neovim|Neovim
+editor-plugin|IDE/代码编辑器|GNU|Emacs
+editor-plugin|IDE/代码编辑器|Zed Industries|Zed
+editor-plugin|IDE/代码编辑器|Helix|Helix
+editor-plugin|IDE/代码编辑器|Notepad++|Notepad++
+editor-plugin|IDE/代码编辑器|Panic|Nova
+editor-plugin|IDE/代码编辑器|Bare Bones|BBEdit
+editor-plugin|IDE/代码编辑器|Apple|Xcode
+editor-plugin|IDE/代码编辑器|Kate|Kate
+editor-plugin|IDE/代码编辑器|GNOME|gedit
+editor-plugin|IDE/代码编辑器|Lapce|Lapce
+editor-plugin|IDE/代码编辑器|Embarcadero|RAD Studio
+editor-plugin|IDE/代码编辑器|Qt Group|Qt Creator
+editor-plugin|IDE/代码编辑器|Posit|RStudio
+editor-plugin|IDE/代码编辑器|Project Jupyter|JupyterLab,Jupyter Notebook
+editor-plugin|IDE/代码编辑器|Arduino|Arduino IDE
+editor-plugin|IDE/代码编辑器|MathWorks|MATLAB
+editor-plugin|IDE/代码编辑器|Wolfram|Mathematica
+editor-plugin|IDE/代码编辑器|Typora|Typora
+editor-plugin|终端|Microsoft|Windows Terminal
+editor-plugin|终端|Warp|Warp
+editor-plugin|终端|iTerm2|iTerm2
+editor-plugin|终端|Vercel|Hyper
+editor-plugin|终端|WezTerm|WezTerm
+editor-plugin|终端|Kitty|Kitty
+editor-plugin|终端|Tabby|Tabby
+browser-ext|浏览器|Google|Chrome,Chromium
+browser-ext|浏览器|Mozilla|Firefox,Firefox Developer Edition,Thunderbird
+browser-ext|浏览器|Microsoft|Edge
+browser-ext|浏览器|Apple|Safari
+browser-ext|浏览器|Opera|Opera,Opera GX
+browser-ext|浏览器|Brave Software|Brave
+browser-ext|浏览器|Vivaldi Technologies|Vivaldi
+browser-ext|浏览器|The Browser Company|Arc
+browser-ext|浏览器|Yandex|Yandex Browser
+browser-ext|浏览器|Samsung|Samsung Internet
+browser-ext|浏览器|Kiwi|Kiwi Browser
+browser-ext|浏览器|Waterfox|Waterfox
+browser-ext|浏览器|LibreWolf|LibreWolf
+browser-ext|浏览器|Tor Project|Tor Browser
+browser-ext|浏览器|DuckDuckGo|DuckDuckGo Browser
+browser-ext|浏览器|Tencent|QQ浏览器
+browser-ext|浏览器|Qihoo 360|360安全浏览器,360极速浏览器
+browser-ext|浏览器|Sogou|搜狗浏览器
+browser-ext|浏览器|Alibaba|夸克浏览器
+browser-ext|浏览器|Zen|Zen Browser
+browser-ext|浏览器|Floorp|Floorp
+browser-ext|浏览器|Ecosia|Ecosia Browser
+browser-ext|浏览器|Avast|Avast Secure Browser
+browser-ext|浏览器|Sidekick|Sidekick
+browser-ext|浏览器|Maxthon|Maxthon
+adobe-uxp|创意设计|Adobe|Photoshop,InDesign,Premiere Pro (UXP),Adobe XD
+adobe-cep|创意设计|Adobe|Illustrator,After Effects,Premiere Pro (CEP),Audition,Animate,Dreamweaver,InCopy,Bridge,Character Animator,Media Encoder,Prelude,Lightroom Classic
+design-plugin|创意设计|Adobe|Adobe Express
+design-plugin|创意设计|Figma|Figma,FigJam,Figma Slides
+design-plugin|创意设计|Sketch B.V.|Sketch
+design-plugin|创意设计|Penpot|Penpot
+design-plugin|创意设计|Framer|Framer
+design-plugin|创意设计|Canva|Canva
+design-plugin|创意设计|Lunacy (Icons8)|Lunacy
+design-plugin|创意设计|Affinity (Serif)|Affinity Designer,Affinity Photo,Affinity Publisher
+design-plugin|创意设计|Miro|Miro
+design-plugin|创意设计|Lucid|Lucidchart
+design-plugin|创意设计|Whimsical|Whimsical
+design-plugin|创意设计|InVision|InVision
+design-plugin|创意设计|Axure|Axure RP
+design-plugin|创意设计|MasterGo|MasterGo
+design-plugin|创意设计|即时设计|即时设计 (JS Design)
+design-plugin|创意设计|Pixso|Pixso
+design-plugin|创意设计|墨刀|墨刀 (Modao)
+design-plugin|创意设计|Webflow|Webflow
+design-plugin|创意设计|Spline|Spline
+design-plugin|创意设计|draw.io|diagrams.net
+python-dcc|创意设计|GIMP|GIMP
+python-dcc|创意设计|Inkscape|Inkscape
+python-dcc|创意设计|Krita|Krita
+python-dcc|创意设计|Scribus|Scribus
+cpp-sdk|创意设计|Corel|CorelDRAW,Corel Painter,PaintShop Pro
+cpp-sdk|创意设计|Capture One|Capture One
+cpp-sdk|创意设计|Serif|Affinity Plugins (8bf)
+cpp-sdk|创意设计|Clip Studio|Clip Studio Paint
+cpp-sdk|创意设计|Procreate|Procreate (Brushes)
+blender|3D/DCC|Blender Foundation|Blender
+python-dcc|3D/DCC|Autodesk|Maya,MotionBuilder,Mudbox,Flame
+python-dcc|3D/DCC|SideFX|Houdini,Houdini Engine
+python-dcc|3D/DCC|Foundry|Nuke,Katana,Mari,Modo
+python-dcc|3D/DCC|Maxon|Cinema 4D,Redshift,ZBrush
+python-dcc|3D/DCC|Adobe|Substance 3D Painter,Substance 3D Designer,Substance 3D Sampler
+python-dcc|3D/DCC|Chaos|V-Ray,Corona,Enscape
+python-dcc|3D/DCC|NVIDIA|Omniverse
+python-dcc|3D/DCC|Pixar|RenderMan,USD View
+python-dcc|3D/DCC|Isotropix|Clarisse
+python-dcc|3D/DCC|Epic Games|RealityCapture
+python-dcc|3D/DCC|Marvelous Designer|Marvelous Designer
+python-dcc|3D/DCC|Reallusion|iClone,Character Creator
+python-dcc|3D/DCC|Daz 3D|Daz Studio
+python-dcc|3D/DCC|FreeCAD|FreeCAD
+python-dcc|3D/DCC|KiCad|KiCad
+python-dcc|3D/DCC|QGIS|QGIS
+python-dcc|3D/DCC|Esri|ArcGIS Pro
+python-dcc|3D/DCC|Blackmagic Design|DaVinci Resolve,Fusion
+python-dcc|3D/DCC|Avid|Media Composer
+python-dcc|3D/DCC|Unity|Ziva
+python-dcc|3D/DCC|Pixologic|ZBrush (ZScript)
+python-dcc|3D/DCC|Gaffer|Gaffer
+python-dcc|3D/DCC|ShotGrid|ShotGrid Toolkit
+python-dcc|3D/DCC|Autodesk|Flow Production Tracking
+dotnet-addin|3D/DCC|Autodesk|3ds Max
+dotnet-addin|CAD/BIM/工程|Autodesk|AutoCAD,AutoCAD LT,AutoCAD Civil 3D,AutoCAD Plant 3D,AutoCAD Electrical,AutoCAD Mechanical,AutoCAD Map 3D,Revit,Navisworks,Inventor,Fusion 360,Advance Steel,Vault,InfraWorks,Robot Structural Analysis
+dotnet-addin|CAD/BIM/工程|Dassault Systèmes|SolidWorks,CATIA,3DEXPERIENCE,DraftSight
+dotnet-addin|CAD/BIM/工程|Siemens|NX,Solid Edge,Teamcenter,Tecnomatix
+dotnet-addin|CAD/BIM/工程|PTC|Creo,Onshape,Windchill
+dotnet-addin|CAD/BIM/工程|Robert McNeel & Associates|Rhino,Grasshopper
+dotnet-addin|CAD/BIM/工程|Trimble|SketchUp,Tekla Structures,Tekla Model Sharing
+dotnet-addin|CAD/BIM/工程|Graphisoft|Archicad
+dotnet-addin|CAD/BIM/工程|Nemetschek|Vectorworks,Allplan
+dotnet-addin|CAD/BIM/工程|Bentley Systems|MicroStation,OpenRoads,OpenBuildings,STAAD.Pro
+dotnet-addin|CAD/BIM/工程|ANSYS|ANSYS Workbench,ANSYS Fluent,ANSYS Mechanical
+dotnet-addin|CAD/BIM/工程|Altium|Altium Designer
+dotnet-addin|CAD/BIM/工程|Cadence|Allegro,OrCAD,Virtuoso
+dotnet-addin|CAD/BIM/工程|Synopsys|Design Compiler
+dotnet-addin|CAD/BIM/工程|Bricsys|BricsCAD
+dotnet-addin|CAD/BIM/工程|ZWSOFT|中望CAD (ZWCAD),中望3D (ZW3D)
+dotnet-addin|CAD/BIM/工程|广联达|广联达BIM
+dotnet-addin|CAD/BIM/工程|浩辰|浩辰CAD
+dotnet-addin|CAD/BIM/工程|NI|LabVIEW
+dotnet-addin|CAD/BIM/工程|COMSOL|COMSOL Multiphysics
+dotnet-addin|CAD/BIM/工程|Hexagon|MSC Nastran
+office-addin|办公套件|Microsoft|Word,Excel,PowerPoint,Outlook,OneNote,Project,Visio,Teams Office Add-in
+office-addin|办公套件|Kingsoft|WPS Office,WPS 表格,WPS 演示
+saas-app|办公套件|Google|Google Docs,Google Sheets,Google Slides,Gmail,Google Calendar,Google Drive,Google Forms
+saas-app|办公套件|Apple|Pages,Numbers,Keynote
+saas-app|办公套件|Zoho|Zoho Writer,Zoho Sheet,Zoho CRM,Zoho Desk
+editor-plugin|办公套件|The Document Foundation|LibreOffice
+editor-plugin|办公套件|Apache|OpenOffice
+saas-app|办公套件|ONLYOFFICE|ONLYOFFICE
+saas-app|办公套件|腾讯|腾讯文档
+saas-app|办公套件|字节跳动|飞书文档,飞书多维表格
+saas-app|办公套件|石墨|石墨文档
+saas-app|办公套件|金山|金山文档
+notes-plugin|笔记/知识库|Obsidian|Obsidian
+notes-plugin|笔记/知识库|Logseq|Logseq
+notes-plugin|笔记/知识库|Joplin|Joplin
+notes-plugin|笔记/知识库|Zotero|Zotero
+notes-plugin|笔记/知识库|SiYuan|思源笔记
+notes-plugin|笔记/知识库|Trilium|Trilium Notes
+notes-plugin|笔记/知识库|Standard Notes|Standard Notes
+notes-plugin|笔记/知识库|Anytype|Anytype
+notes-plugin|笔记/知识库|AFFiNE|AFFiNE
+notes-plugin|笔记/知识库|Roam Research|Roam Research
+notes-plugin|笔记/知识库|RemNote|RemNote
+notes-plugin|笔记/知识库|Craft|Craft Docs
+notes-plugin|笔记/知识库|Evernote|Evernote
+notes-plugin|笔记/知识库|有道|有道云笔记
+notes-plugin|笔记/知识库|Calibre|Calibre
+notes-plugin|笔记/知识库|Mendeley|Mendeley
+saas-app|笔记/知识库|Notion Labs|Notion
+saas-app|笔记/知识库|Coda|Coda
+saas-app|笔记/知识库|Airtable|Airtable
+saas-app|笔记/知识库|语雀|语雀
+cms-plugin|CMS/建站|Automattic|WordPress,WooCommerce
+cms-plugin|CMS/建站|Drupal|Drupal
+cms-plugin|CMS/建站|Joomla|Joomla
+cms-plugin|CMS/建站|Adobe|Magento (Adobe Commerce)
+cms-plugin|CMS/建站|PrestaShop|PrestaShop
+cms-plugin|CMS/建站|OpenCart|OpenCart
+cms-plugin|CMS/建站|Craft CMS|Craft CMS
+cms-plugin|CMS/建站|Matomo|Matomo
+cms-plugin|CMS/建站|MediaWiki|MediaWiki
+cms-plugin|CMS/建站|phpBB|phpBB
+cms-plugin|CMS/建站|Moodle|Moodle
+cms-plugin|CMS/建站|Nextcloud|Nextcloud
+cms-plugin|CMS/建站|TYPO3|TYPO3
+cms-plugin|CMS/建站|Concrete CMS|Concrete CMS
+cms-plugin|CMS/建站|Shopware|Shopware
+cms-plugin|CMS/建站|Laravel|Laravel Nova
+cms-plugin|CMS/建站|Discuz!|Discuz!
+cms-plugin|CMS/建站|帝国CMS|帝国CMS
+saas-app|CMS/建站|Ghost|Ghost
+saas-app|CMS/建站|Strapi|Strapi
+saas-app|CMS/建站|Contentful|Contentful
+saas-app|CMS/建站|Sanity|Sanity
+saas-app|CMS/建站|Payload|Payload CMS
+saas-app|CMS/建站|Directus|Directus
+saas-app|CMS/建站|Wix|Wix
+saas-app|CMS/建站|Squarespace|Squarespace
+saas-app|CMS/建站|Discourse|Discourse
+saas-app|CMS/建站|Docusaurus|Docusaurus
+saas-app|CMS/建站|Hexo|Hexo
+saas-app|CMS/建站|Hugo|Hugo
+saas-app|CMS/建站|Jekyll|Jekyll
+saas-app|电商|Shopify|Shopify,Shopify POS
+saas-app|电商|BigCommerce|BigCommerce
+saas-app|电商|Salesforce|Commerce Cloud
+saas-app|电商|Ecwid|Ecwid
+saas-app|电商|Etsy|Etsy
+saas-app|电商|Amazon|Amazon Seller Central
+saas-app|电商|eBay|eBay
+saas-app|电商|Stripe|Stripe Apps
+saas-app|电商|PayPal|PayPal
+saas-app|电商|Square|Square
+saas-app|电商|有赞|有赞
+saas-app|电商|微盟|微盟
+saas-app|电商|淘宝|淘宝开放平台
+saas-app|电商|京东|京东宙斯
+saas-app|电商|拼多多|拼多多开放平台
+saas-app|电商|抖音|抖店开放平台
+saas-app|电商|Lazada|Lazada
+saas-app|电商|Shopee|Shopee
+saas-app|电商|Mercado Libre|Mercado Libre
+chat-bot|通讯协作|Salesforce|Slack
+chat-bot|通讯协作|Discord|Discord
+chat-bot|通讯协作|Microsoft|Microsoft Teams,Skype
+chat-bot|通讯协作|Mattermost|Mattermost
+chat-bot|通讯协作|Rocket.Chat|Rocket.Chat
+chat-bot|通讯协作|Zulip|Zulip
+chat-bot|通讯协作|Telegram|Telegram
+chat-bot|通讯协作|Meta|WhatsApp Business,Messenger
+chat-bot|通讯协作|LINE|LINE
+chat-bot|通讯协作|Viber|Viber
+chat-bot|通讯协作|Element|Element (Matrix)
+chat-bot|通讯协作|Zoom|Zoom Apps
+chat-bot|通讯协作|Cisco|Webex
+chat-bot|通讯协作|Google|Google Chat,Google Meet
+chat-bot|通讯协作|字节跳动|飞书 (Lark)
+chat-bot|通讯协作|阿里巴巴|钉钉
+chat-bot|通讯协作|腾讯|企业微信,微信公众号,微信小程序,QQ机器人,腾讯会议
+chat-bot|通讯协作|Twitch|Twitch Extensions
+chat-bot|通讯协作|Kakao|KakaoTalk
+chat-bot|通讯协作|Signal|Signal
+chat-bot|通讯协作|Pumble|Pumble
+chat-bot|通讯协作|Chanty|Chanty
+saas-app|项目/协作|Atlassian|Jira,Confluence,Bitbucket,Trello,Jira Service Management,Bamboo,Opsgenie,Statuspage,Compass,Loom
+saas-app|项目/协作|Asana|Asana
+saas-app|项目/协作|monday.com|monday.com
+saas-app|项目/协作|ClickUp|ClickUp
+saas-app|项目/协作|Linear|Linear
+saas-app|项目/协作|Basecamp|Basecamp
+saas-app|项目/协作|Smartsheet|Smartsheet
+saas-app|项目/协作|Wrike|Wrike
+saas-app|项目/协作|Todoist|Todoist
+saas-app|项目/协作|Height|Height
+saas-app|项目/协作|Shortcut|Shortcut
+saas-app|项目/协作|YouTrack (JetBrains)|YouTrack
+saas-app|项目/协作|Teambition|Teambition
+saas-app|项目/协作|Tower|Tower
+saas-app|项目/协作|PingCode|PingCode
+saas-app|项目/协作|ONES|ONES
+saas-app|项目/协作|腾讯|TAPD
+saas-app|项目/协作|Calendly|Calendly
+saas-app|项目/协作|Dropbox|Dropbox,Dropbox Paper
+saas-app|项目/协作|Box|Box
+saas-app|项目/协作|DocuSign|DocuSign
+saas-app|项目/协作|Typeform|Typeform
+saas-app|项目/协作|SurveyMonkey|SurveyMonkey
+saas-app|项目/协作|Zapier|Zapier
+saas-app|项目/协作|Make|Make (Integromat)
+saas-app|项目/协作|n8n|n8n
+saas-app|项目/协作|IFTTT|IFTTT
+saas-app|项目/协作|Microsoft|Power Automate,Power Apps,Power BI,Dynamics 365,SharePoint
+saas-app|CRM/客服/营销|Salesforce|Salesforce Sales Cloud,Salesforce Service Cloud,Tableau,MuleSoft
+saas-app|CRM/客服/营销|HubSpot|HubSpot
+saas-app|CRM/客服/营销|Zendesk|Zendesk
+saas-app|CRM/客服/营销|Freshworks|Freshdesk,Freshservice
+saas-app|CRM/客服/营销|Intercom|Intercom
+saas-app|CRM/客服/营销|Pipedrive|Pipedrive
+saas-app|CRM/客服/营销|Mailchimp|Mailchimp
+saas-app|CRM/客服/营销|Klaviyo|Klaviyo
+saas-app|CRM/客服/营销|Front|Front
+saas-app|CRM/客服/营销|Help Scout|Help Scout
+saas-app|CRM/客服/营销|ServiceNow|ServiceNow
+saas-app|CRM/客服/营销|SAP|SAP S/4HANA,SAP BTP,SuccessFactors
+saas-app|CRM/客服/营销|Oracle|NetSuite,Oracle Cloud ERP
+saas-app|CRM/客服/营销|Workday|Workday
+saas-app|CRM/客服/营销|Odoo|Odoo
+saas-app|CRM/客服/营销|Intuit|QuickBooks
+saas-app|CRM/客服/营销|Xero|Xero
+saas-app|CRM/客服/营销|纷享销客|纷享销客
+saas-app|CRM/客服/营销|销售易|销售易
+saas-app|CRM/客服/营销|金蝶|金蝶云星空
+saas-app|CRM/客服/营销|用友|用友 YonBIP
+saas-app|CRM/客服/营销|Segment|Segment
+saas-app|CRM/客服/营销|Mixpanel|Mixpanel
+saas-app|CRM/客服/营销|Amplitude|Amplitude
+ai-agent|AI 助手/智能体|Anthropic|Claude Code,Claude Desktop (MCP),Claude.ai Integrations
+ai-agent|AI 助手/智能体|Anysphere|Cursor MCP / Rules
+ai-agent|AI 助手/智能体|GitHub|GitHub Copilot Extensions,Copilot Chat Participants
+ai-agent|AI 助手/智能体|Model Context Protocol|MCP Server (通用)
+ai-agent|AI 助手/智能体|OpenAI|ChatGPT Apps (Apps SDK),Custom GPT Actions,Codex CLI
+ai-agent|AI 助手/智能体|Google|Gemini CLI Extensions,Gemini Gems
+ai-agent|AI 助手/智能体|Microsoft|Microsoft 365 Copilot Plugins,Semantic Kernel,Copilot Studio
+ai-agent|AI 助手/智能体|Amazon|Amazon Q Developer,Bedrock Agents
+ai-agent|AI 助手/智能体|LangChain|LangChain Tools,LangGraph
+ai-agent|AI 助手/智能体|LlamaIndex|LlamaIndex Tools
+ai-agent|AI 助手/智能体|Dify|Dify 插件
+ai-agent|AI 助手/智能体|字节跳动|Coze (扣子) 插件
+ai-agent|AI 助手/智能体|百度|文心智能体
+ai-agent|AI 助手/智能体|阿里云|通义灵码,百炼 MCP
+ai-agent|AI 助手/智能体|腾讯|腾讯元器
+ai-agent|AI 助手/智能体|Moonshot AI|Kimi
+ai-agent|AI 助手/智能体|智谱|智谱清言
+ai-agent|AI 助手/智能体|Continue|Continue
+ai-agent|AI 助手/智能体|Cline|Cline
+ai-agent|AI 助手/智能体|Roo Code|Roo Code
+ai-agent|AI 助手/智能体|Sourcegraph|Cody
+ai-agent|AI 助手/智能体|Tabnine|Tabnine
+ai-agent|AI 助手/智能体|Codeium|Windsurf Cascade
+ai-agent|AI 助手/智能体|Zed Industries|Zed AI Context Servers
+ai-agent|AI 助手/智能体|Raycast|Raycast Extensions
+ai-agent|AI 助手/智能体|Alfred|Alfred Workflows
+ai-agent|AI 助手/智能体|Open WebUI|Open WebUI Tools
+ai-agent|AI 助手/智能体|LobeHub|LobeChat 插件
+ai-agent|AI 助手/智能体|Flowise|Flowise
+ai-agent|AI 助手/智能体|CrewAI|CrewAI Tools
+ai-agent|AI 助手/智能体|AutoGen|AutoGen
+ai-agent|AI 助手/智能体|Hugging Face|Hugging Face Spaces / smolagents
+ai-agent|AI 助手/智能体|Ollama|Ollama
+ai-agent|AI 助手/智能体|LM Studio|LM Studio
+ai-agent|AI 助手/智能体|Perplexity|Perplexity
+ai-agent|AI 助手/智能体|xAI|Grok
+ai-agent|AI 助手/智能体|Mistral|Le Chat
+ai-agent|AI 助手/智能体|Poe|Poe Bots
+ai-agent|AI 助手/智能体|Character.AI|Character.AI
+ai-agent|AI 助手/智能体|Goose (Block)|Goose
+ai-agent|AI 助手/智能体|Aider|Aider
+ai-agent|AI 助手/智能体|JetBrains|JetBrains AI Assistant,Junie
+game-engine|游戏引擎|Unity|Unity Editor
+game-engine|游戏引擎|Epic Games|Unreal Engine,Unreal Editor for Fortnite
+game-engine|游戏引擎|Godot|Godot Engine
+game-engine|游戏引擎|Cocos|Cocos Creator
+game-engine|游戏引擎|GameMaker|GameMaker
+game-engine|游戏引擎|Amazon|O3DE (Open 3D Engine)
+game-engine|游戏引擎|Construct|Construct 3
+game-engine|游戏引擎|Defold|Defold
+game-engine|游戏引擎|RPG Maker|RPG Maker MZ
+game-engine|游戏引擎|Roblox|Roblox Studio
+game-engine|游戏引擎|Bevy|Bevy
+game-engine|游戏引擎|Stride|Stride
+game-engine|游戏引擎|Crytek|CryEngine
+game-engine|游戏引擎|Valve|Source 2 (Hammer)
+game-engine|游戏引擎|LÖVE|LÖVE
+game-engine|游戏引擎|Phaser|Phaser
+game-engine|游戏引擎|PlayCanvas|PlayCanvas
+game-engine|游戏引擎|Babylon.js|Babylon.js
+game-engine|游戏引擎|Three.js|Three.js Editor
+game-engine|游戏引擎|Tiled|Tiled Map Editor
+game-engine|游戏引擎|Aseprite|Aseprite
+game-mod|游戏 Mod|Mojang|Minecraft (Fabric),Minecraft (Forge),Minecraft (NeoForge),Minecraft Bedrock Add-ons
+game-mod|游戏 Mod|Bethesda|Skyrim,Fallout 4,Starfield
+game-mod|游戏 Mod|Valve|Steam Workshop,Counter-Strike 2,Dota 2
+game-mod|游戏 Mod|Facepunch|Garry's Mod,Rust (Oxide/uMod)
+game-mod|游戏 Mod|Klei|Don't Starve Together
+game-mod|游戏 Mod|ConcernedApe|Stardew Valley (SMAPI)
+game-mod|游戏 Mod|Re-Logic|Terraria (tModLoader)
+game-mod|游戏 Mod|Paradox|Cities: Skylines,Stellaris,Crusader Kings III
+game-mod|游戏 Mod|Squad|Kerbal Space Program
+game-mod|游戏 Mod|Ludeon|RimWorld
+game-mod|游戏 Mod|Wube|Factorio
+game-mod|游戏 Mod|Blizzard|World of Warcraft AddOns
+game-mod|游戏 Mod|Bohemia Interactive|Arma 3
+game-mod|游戏 Mod|Mount & Blade|Mount & Blade II: Bannerlord
+game-mod|游戏 Mod|Team Cherry|Hollow Knight
+game-mod|游戏 Mod|Mega Crit|Slay the Spire
+game-mod|游戏 Mod|Rockstar|GTA V (FiveM)
+game-mod|游戏 Mod|Overwolf|CurseForge,Overwolf Apps
+game-mod|游戏 Mod|Modrinth|Modrinth
+game-mod|游戏 Mod|Nexus Mods|Nexus Mods
+java-plugin|服务器/运维|PaperMC|Paper (Minecraft Server),Velocity
+java-plugin|服务器/运维|SpigotMC|Spigot,BungeeCord
+java-plugin|服务器/运维|Jenkins|Jenkins
+java-plugin|服务器/运维|JetBrains|TeamCity
+java-plugin|服务器/运维|Sonar|SonarQube
+java-plugin|服务器/运维|Elastic|Elasticsearch,Logstash
+java-plugin|服务器/运维|Apache|Kafka Connect,Maven,Tomcat,Solr,NiFi,Flink
+java-plugin|服务器/运维|Gradle|Gradle
+java-plugin|服务器/运维|Keycloak|Keycloak
+java-plugin|服务器/运维|Neo4j|Neo4j
+java-plugin|服务器/运维|Atlassian|Bamboo Server
+java-plugin|服务器/运维|Gerrit|Gerrit
+devtool-plugin|服务器/运维|Grafana Labs|Grafana,Loki
+devtool-plugin|服务器/运维|Elastic|Kibana
+devtool-plugin|服务器/运维|HashiCorp|Terraform,Vault,Packer,Nomad,Consul
+devtool-plugin|服务器/运维|Pulumi|Pulumi
+devtool-plugin|服务器/运维|Kubernetes|kubectl,Helm
+devtool-plugin|服务器/运维|Docker|Docker Desktop Extensions,Docker CLI
+devtool-plugin|服务器/运维|Red Hat|Ansible,OpenShift,Podman
+devtool-plugin|服务器/运维|Prometheus|Prometheus Exporters
+devtool-plugin|服务器/运维|Datadog|Datadog
+devtool-plugin|服务器/运维|New Relic|New Relic
+devtool-plugin|服务器/运维|Sentry|Sentry
+devtool-plugin|服务器/运维|PagerDuty|PagerDuty
+devtool-plugin|服务器/运维|Backstage (Spotify)|Backstage
+devtool-plugin|服务器/运维|Argo|Argo CD
+devtool-plugin|服务器/运维|Traefik|Traefik
+devtool-plugin|服务器/运维|Kong|Kong Gateway
+devtool-plugin|服务器/运维|NGINX|NGINX
+devtool-plugin|服务器/运维|Caddy|Caddy
+devtool-plugin|服务器/运维|Envoy|Envoy
+devtool-plugin|服务器/运维|Fluentd|Fluentd
+devtool-plugin|服务器/运维|Telegraf|Telegraf
+devtool-plugin|服务器/运维|Home Assistant|Home Assistant
+devtool-plugin|服务器/运维|Node-RED|Node-RED
+devtool-plugin|服务器/运维|Postman|Postman
+devtool-plugin|服务器/运维|Insomnia|Insomnia
+devtool-plugin|服务器/运维|Cloudflare|Cloudflare Workers
+devtool-plugin|服务器/运维|Vercel|Vercel Integrations
+devtool-plugin|服务器/运维|Netlify|Netlify Build Plugins
+devtool-plugin|开发工具链|GitHub|GitHub Actions,GitHub Apps,GitHub CLI Extensions
+devtool-plugin|开发工具链|GitLab|GitLab CI
+devtool-plugin|开发工具链|Vite|Vite
+devtool-plugin|开发工具链|webpack|webpack
+devtool-plugin|开发工具链|Rollup|Rollup
+devtool-plugin|开发工具链|esbuild|esbuild
+devtool-plugin|开发工具链|Babel|Babel
+devtool-plugin|开发工具链|ESLint|ESLint
+devtool-plugin|开发工具链|Prettier|Prettier
+devtool-plugin|开发工具链|Stylelint|Stylelint
+devtool-plugin|开发工具链|PostCSS|PostCSS
+devtool-plugin|开发工具链|Tailwind Labs|Tailwind CSS
+devtool-plugin|开发工具链|Parcel|Parcel
+devtool-plugin|开发工具链|Vercel|Turbopack,Next.js
+devtool-plugin|开发工具链|Gatsby|Gatsby
+devtool-plugin|开发工具链|Astro|Astro
+devtool-plugin|开发工具链|Nuxt|Nuxt Modules
+devtool-plugin|开发工具链|Storybook|Storybook Addons
+devtool-plugin|开发工具链|Jest|Jest
+devtool-plugin|开发工具链|Vitest|Vitest
+devtool-plugin|开发工具链|Microsoft|Playwright,TypeScript Language Service
+devtool-plugin|开发工具链|Cypress|Cypress
+devtool-plugin|开发工具链|Fastify|Fastify
+devtool-plugin|开发工具链|Serverless|Serverless Framework
+devtool-plugin|开发工具链|Nx|Nx
+devtool-plugin|开发工具链|Yeoman|Yeoman
+devtool-plugin|开发工具链|Oclif (Salesforce)|oclif CLI
+devtool-plugin|开发工具链|pytest|pytest
+devtool-plugin|开发工具链|MkDocs|MkDocs
+devtool-plugin|开发工具链|Sphinx|Sphinx
+devtool-plugin|开发工具链|Git|Git Hooks
+devtool-plugin|开发工具链|pre-commit|pre-commit
+devtool-plugin|开发工具链|Fig (Amazon)|Fig / Amazon Q CLI
+devtool-plugin|开发工具链|Oh My Zsh|Oh My Zsh
+devtool-plugin|开发工具链|Starship|Starship
+devtool-plugin|开发工具链|Apache|Apache Airflow
+devtool-plugin|开发工具链|dbt Labs|dbt
+devtool-plugin|数据/数据库|DBeaver|DBeaver
+devtool-plugin|数据/数据库|Metabase|Metabase
+devtool-plugin|数据/数据库|Apache|Superset
+devtool-plugin|数据/数据库|Redash|Redash
+devtool-plugin|数据/数据库|PostgreSQL|PostgreSQL Extensions
+devtool-plugin|数据/数据库|Redis|Redis Modules
+devtool-plugin|数据/数据库|MongoDB|MongoDB Compass
+devtool-plugin|数据/数据库|Snowflake|Snowflake Native Apps
+devtool-plugin|数据/数据库|Databricks|Databricks
+devtool-plugin|数据/数据库|Supabase|Supabase
+devtool-plugin|数据/数据库|Retool|Retool
+devtool-plugin|数据/数据库|Appsmith|Appsmith
+devtool-plugin|数据/数据库|ToolJet|ToolJet
+devtool-plugin|数据/数据库|KNIME|KNIME
+devtool-plugin|数据/数据库|Alteryx|Alteryx
+devtool-plugin|数据/数据库|Qlik|Qlik Sense
+devtool-plugin|数据/数据库|帆软|FineReport,FineBI
+audio-plugin|音频/音乐|Ableton|Ableton Live,Max for Live
+audio-plugin|音频/音乐|Image-Line|FL Studio
+audio-plugin|音频/音乐|Steinberg|Cubase,Nuendo,WaveLab,Dorico
+audio-plugin|音频/音乐|Apple|Logic Pro,GarageBand,Final Cut Pro,Motion
+audio-plugin|音频/音乐|Cockos|REAPER
+audio-plugin|音频/音乐|Bitwig|Bitwig Studio
+audio-plugin|音频/音乐|Avid|Pro Tools,Sibelius
+audio-plugin|音频/音乐|PreSonus|Studio One
+audio-plugin|音频/音乐|BandLab|Cakewalk
+audio-plugin|音频/音乐|Reason Studios|Reason
+audio-plugin|音频/音乐|MOTU|Digital Performer
+audio-plugin|音频/音乐|Audacity|Audacity
+audio-plugin|音频/音乐|Native Instruments|Kontakt,Maschine,Reaktor
+audio-plugin|音频/音乐|Renoise|Renoise
+audio-plugin|音频/音乐|LMMS|LMMS
+audio-plugin|音频/音乐|Ardour|Ardour
+audio-plugin|音频/音乐|Magix|Sound Forge,Vegas Pro,Samplitude
+audio-plugin|音频/音乐|MuseScore|MuseScore
+audio-plugin|音频/音乐|OBS Project|OBS Studio
+audio-plugin|音频/音乐|Elgato|Stream Deck
+audio-plugin|音频/音乐|Spotify|Spotify (Spicetify)
+audio-plugin|音频/音乐|Foobar2000|foobar2000
+audio-plugin|音频/音乐|VideoLAN|VLC

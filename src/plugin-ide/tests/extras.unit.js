@@ -1,0 +1,20 @@
+const assert = require('assert'), os = require('os'), fs = require('fs'), path = require('path');
+process.env.PLUGIN_IDE_WORKSPACE = fs.mkdtempSync(path.join(os.tmpdir(), 'pw-x-'));
+const L = require('../src/core/lifecycle'), X = require('../src/core/extras');
+(async () => {
+  assert.strictEqual(X.htmlToText('<html><script>x</script><p>你好&amp;</p><b>世界</b></html>').replace(/\s+/g, ''), '你好&世界');
+  const d = X.lineDiff('a\nb\nc', 'a\nB\nc\nd'); assert.strictEqual(d.added, 2); assert.strictEqual(d.removed, 1);
+  L.create({ vendorId: 'visual-studio-code', name: 'xt' });
+  const cp = L.snapshot('xt', 'base');
+  const f0 = L.files('xt')[0]; L.writeFile('xt', f0, 'changed'); L.writeFile('xt', 'new.txt', 'n');
+  const df = X.cpDiff('xt', cp.id); assert.ok(df.files.find(f => f.path === f0 && f.status === 'modified')); assert.ok(df.files.find(f => f.path === 'new.txt' && f.status === 'added'));
+  X.restoreFile('xt', cp.id, f0); assert.notStrictEqual(L.readFile('xt', f0), 'changed'); assert.ok(L.files('xt').includes('new.txt'));
+  X.restoreFile('xt', cp.id, 'new.txt'); assert.ok(!L.files('xt').includes('new.txt'));
+  await X.addDoc('xt', { title: '规则', text: '所有按钮必须是蓝色' });
+  assert.ok(X.contextBlock('xt').includes('蓝色'));
+  await assert.rejects(X.addDoc('xt', { url: 'ftp://x' }));
+  assert.strictEqual(X.installGuide('xt').ready, false);
+  assert.ok(X.publishExplain('xt').what.includes('dry-run'));
+  const t = await X.testLlm({ provider: 'openai', baseUrl: 'http://127.0.0.1:9/v1', model: 'm', apiKey: 'k' }); assert.strictEqual(t.ok, false); assert.ok(/无法连接|拒绝/.test(t.message));
+  console.log('extras unit tests OK');
+})().catch(e => { console.error(e); process.exit(1); });

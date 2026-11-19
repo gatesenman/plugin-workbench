@@ -1,0 +1,129 @@
+{
+  "name": "plugin-workbench",
+  "version": "1.3.0",
+  "description": "插件工坊 · 通用 AI 辅助插件开发工作台",
+  "main": "electron/main.js",
+  "scripts": {
+    "setup": "bash scripts/setup-ide.sh",
+    "start": "electron .",
+    "web": "node src/server/server.js",
+    "test": "playwright test",
+    "test:packaged": "PLUGIN_IDE_EXE=dist-app/linux-unpacked/plugin-lifecycle-ide playwright test",
+    "dist:linux": "electron-builder --linux AppImage deb --x64",
+    "dist:dir": "electron-builder --linux dir",
+    "dist:win": "electron-builder --win nsis dir --x64",
+    "dist:mac": "electron-builder --mac dmg",
+    "test:unit": "node tests/ai.unit.js && node tests/agent.unit.js && node tests/extras.unit.js && node tests/hosts.unit.js",
+    "test:all": "npm run test:unit && playwright test",
+    "setup:win": "PLUGIN_IDE_SETUP_TARGET=win bash scripts/setup-ide.sh",
+    "setup:all": "PLUGIN_IDE_SETUP_TARGET=all bash scripts/setup-ide.sh",
+    "dist:win:nsis": "electron-builder --win nsis --x64"
+  },
+  "keywords": [],
+  "author": "PluginWorkbench <dev@example.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@vscode/codicons": "^0.0.46-24",
+    "archiver": "^7.0.1",
+    "express": "^5.3.0",
+    "monaco-editor": "^0.57.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "electron": "^31.7.7",
+    "electron-builder": "^26.15.3"
+  },
+  "productName": "PluginWorkbench",
+  "build": {
+    "appId": "com.pluginworkbench.app",
+    "productName": "PluginWorkbench",
+    "asar": false,
+    "directories": {
+      "output": "dist-app",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**",
+      "src/**",
+      "ui/**",
+      "extensions/**",
+      "package.json",
+      "!**/*.zip",
+      "!vendor/**",
+      "build/icon.png",
+      "build/icon.ico"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development",
+      "executableName": "plugin-workbench",
+      "maintainer": "PluginWorkbench <dev@example.com>",
+      "icon": "build/icon.png",
+      "artifactName": "PluginWorkbench-${version}-linux-${arch}.${ext}",
+      "extraResources": [
+        {
+          "from": "vendor/openvscode-server",
+          "to": "app/vendor/openvscode-server"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "dir",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "PluginWorkbench-${version}-win-${arch}.${ext}",
+      "executableName": "PluginWorkbench",
+      "extraResources": [
+        {
+          "from": "vendor/code-server",
+          "to": "app/vendor/code-server"
+        },
+        {
+          "from": "build/icon.ico",
+          "to": "icon.ico"
+        },
+        {
+          "from": "build/icon.png",
+          "to": "icon.png"
+        }
+      ],
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "插件工坊",
+      "installerLanguages": [
+        "zh_CN",
+        "en_US"
+      ],
+      "language": "2052",
+      "artifactName": "PluginWorkbench-${version}-win-${arch}-setup.${ext}"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.png",
+      "artifactName": "PluginWorkbench-${version}-mac-${arch}.${ext}"
+    },
+    "forceCodeSigning": false
+  },
+  "homepage": "https://github.com/gitpod-io/openvscode-server"
+}
