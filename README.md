@@ -39,8 +39,15 @@ npm install
 # 按该目录 README 启动开发或桌面端
 ```
 ## 文档
+- [docs/product-review.md](docs/product-review.md)
 
-- [源码 README](README.original.md)
+## 贡献
+
+欢迎通过 Issue 和 Pull Request 参与，详见 [CONTRIBUTING.md](CONTRIBUTING.md)。安全问题请按 [SECURITY.md](SECURITY.md) 私下报告。参与时请遵守 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。
+
+## 许可证
+
+本仓库尚未附带 LICENSE 文件，许可证未指定。
 
 ---
 
@@ -88,5 +95,12 @@ npm install
 ```
 ## Documentation
 
-- [源码 README](README.original.md)
+- [docs/product-review.md](docs/product-review.md)
 
+## Contributing
+
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please report vulnerabilities privately via [SECURITY.md](SECURITY.md). This project follows [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+## License
+
+No LICENSE file is included in this repository; the license is unspecified.
