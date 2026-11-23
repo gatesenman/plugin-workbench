@@ -4,9 +4,11 @@
 
 ## 界面截图
 
+以下为仓库已有的真实产品界面。首页横幅写明「离线演示模式」，因此这些图是**演示/离线模式**，不是已连接真实模型后的生产画面，也不是 Windows 安装包截图（本仓库没有 GitHub Release）。
+
 ![首页](screenshots/v1.2/01-home-demo-banner.png)
 
-*首页 / Home*
+*首页（离线演示模式） / Home (offline demo mode)*
 
 ![意图卡片](screenshots/v1.2/02-intent-cards.png)
 
@@ -59,9 +61,11 @@ npm install
 
 ## Screenshots
 
+These are existing real product captures. The home banner states offline demo mode, so they are not a live-model production session and not Windows-installer shots (no GitHub Release).
+
 ![Home](screenshots/v1.2/01-home-demo-banner.png)
 
-*首页 / Home*
+*首页（离线演示模式） / Home (offline demo mode)*
 
 ![Intent cards](screenshots/v1.2/02-intent-cards.png)
 
